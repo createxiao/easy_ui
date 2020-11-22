@@ -1,18 +1,11 @@
 
-
-
-layui.use(['layer', 'form'], function(){
-    //var layer = layui.layer,form = layui.form;
-    layer.confirm('今天捕鱼重要嘛？', {
-        btn: ['重要','奇葩'] //按钮
-      }, function(){
-        layer.msg('的确很重要', {icon: 1});
-      }, function(){
-        layer.msg('也可以这样', {
-          time: 20000, //20s后自动关闭
-          btn: ['明白了', '知道了']
-        });
-      });
+  layui.define(['layer'],function(exports){  //引用layer模块
+    var layer = layui.layer;
+    exports('mod1',function(){  //注意，这里是模块输出的核心，模块名必须和use时的模块名一致，这里的index就是在index.html use的模块
+      layer.msg('leslie cheung');
+    })
+  })
+  layui.data('test', {
+    key: 'nickname'
+    ,value: '贤心'
   });
-
-

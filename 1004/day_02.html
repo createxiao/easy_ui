@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../layui/css/day_02.css" media="all">
+</head>
+<body>
+    <dvi class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+    <div class="layui-logo">
+        Daily Plan管理系统
+        </div>
+    <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="">个人中心<span class="layui-badge-dot"></span></a>
+        </li>
+        <li class="layui-nav-item" lay-unselect="">
+          <a href="javascript:;"><img src="../layui/img/1.jpg" class="layui-nav-img">我</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">修改信息</a></dd>
+            <dd><a href="javascript:;">安全管理</a></dd>
+            <dd><a href="javascript:;">退了</a></dd>
+          </dl>
+        </li>
+      </ul>
+      </div>
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+          <li class="layui-nav-item">
+            <a href="javascript:;">我的日常</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;">选项1</a></dd>
+              <dd><a href="javascript:;">选项2</a></dd>
+              <dd><a href="javascript:;">选项3</a></dd>
+            </dl>
+          </li>
+
+          <li class="layui-nav-item">
+            <a href="javascript:;">日常分享</a>
+            <dl class="layui-nav-child">
+              <dd><a href="">工作分享</a></dd>
+              <dd><a href="">游玩分享</a></dd>
+              <dd><a href="">吃喝分享</a></dd>
+            </dl>
+          </li>
+
+          <li class="layui-nav-item">
+              <a href="javascript:;">日常计划</a>
+            <dl class="layui-nav-child">
+            <dd><a href="javascript:;">周总结</a></dd>
+              <dd><a href="javascript:;">月总结</a></dd>
+            </dl>
+        </li>
+          <li class="layui-nav-item"><a href="">时间轴</a></li>
+        </ul>
+      
+</dvi>
+   
+    <script src="../layui/layui.js"></script>
+    <script>
+        layui.config({
+        base:'../layui/js/' //你存放新模块的目录，注意，不是layui的模块目录
+    }).use(['mod1','layer'],function(){ //加载入口 上述的 index 即为你 js/ 目录下的 index.js，看看官方的文件结构，如下图,index.js相当于就成为了新的文件模块（与下文提的模块不一样）
+        var layer = layui.layer;
+    })
+
+        layui.use(['mod1'],function(){
+            layui.mod1()  //调用index这个自定义模块
+        })
+        layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+
+    </script>
+    
+</body>
+</html>
